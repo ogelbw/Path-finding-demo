@@ -16,7 +16,7 @@ function NodeAction(x,y) {
     let node = getNode(x,y)
     switch (actionState) {
         case "PlaceStart":
-            if(start != []){
+            if(start.length != 0){
                 let tempNode = getNode(start[0], start[1])
                 tempNode.className = "GridNode"
             }
@@ -27,7 +27,7 @@ function NodeAction(x,y) {
             break;
             
             case "PlaceGoal":
-                if (goal != []){
+                if (goal.length != 0){
                     let tempNode = getNode(goal[0], goal[1])
                     tempNode.className = "GridNode"}
                     if([x,y] == start) {start = []}
@@ -38,7 +38,10 @@ function NodeAction(x,y) {
             break;
 
         case "PlaceWall":
-            node.
+            if (x == goal[0] && y == goal[1]){goal = []}
+            if (x == start[0] && y == start[1]){start = []}
+            node.className = "Wall GridNode"
+
             break
     
         default:
