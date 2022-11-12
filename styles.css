@@ -3,7 +3,7 @@
   color: white;
   border: none;
   cursor: pointer;
-  position: absolute;
+  /* position: absolute; */
   left: 50%;
   top: 50%;
   transform: translateY(-50%);
@@ -42,11 +42,11 @@
 }
 
 .dropdown {
-  position: absolute;
-  display: inline-block;
+  /* position: absolute; */
+  /* display: inline-block; */
   left: 50%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(75%);
   height: 100%;
 }
 
@@ -82,7 +82,7 @@ header{
   background-color: #cccccc;
   border-radius: 5px;
   height: 100%;
-  position: relative;
+  /* position: relative; */
   padding-bottom: 10px;
 }
 
@@ -91,11 +91,11 @@ header{
   box-shadow: none;
   background: none;
   /* position: absolute; */
-  position: absolute;
+  /* position: absolute; */
   top:50%;
   left: 50%;
   -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  transform: translateY(25%);
   border: 0;
   scale: 1.6;
   border-radius: 5px;
