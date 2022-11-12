@@ -7,9 +7,9 @@
       <header WIDTH = 100%>
         <table WIDTH = 80%>
           <tr VALIGN = TOP style="height: 40px;">
-            <td style="position: relative;" ><button class="Goal Button">Goal</button></td>
-            <td style="position: relative;" ><button class="Start Button">Start</button></td>
-            <td style="position: relative;" ><button class="Wall Button">Wall</button></td>
+            <td style="position: relative;" ><button class="Goal Button"><p>Goal</p></button></td>
+            <td style="position: relative;" ><button class="Start Button"><p>Start</p></button></td>
+            <td style="position: relative;" ><button class="Wall Button"><p>Wall</p></button></td>
             <td style="position: relative;">
               <div class="dropdown">
                 <button onclick="myFunction()" class="dropbtn" id = "findertype">Change Pathfinder</button>
@@ -56,7 +56,7 @@
         <script src="./scripts/grid.js"></script>
         <script type="text/javascript">makeGrid(11,8)</script>
         <div>
-          <p>team: the bean crew</p>
+          <p id="emph">team: the bean crew</p>
         </div>
       </body>
       </html>
