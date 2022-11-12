@@ -3,6 +3,11 @@ function IsWall(x,y){
     return thing.className == "Wall GridNode"
 }
 
+function IsSearching(x,y){
+    let thing = getNode(x,y)
+    return thing.className == "Searching GridNode"
+}
+
 function isGoal(){
     let thing = getNode(x,y)
     return thing.getAttribute("data") == "goal"

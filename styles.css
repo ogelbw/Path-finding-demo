@@ -142,3 +142,11 @@ header{
 .Goal.GridNode{
   background-color: #34db66;
 }
+
+.Searching.GridNode{
+  background-color: coral;
+}
+
+.Path.GridNode{
+  background-color: #29b94f;
+}
