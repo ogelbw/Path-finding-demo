@@ -4,6 +4,7 @@
       <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+<<<<<<< Updated upstream
       <header>
         <table WIDTH = 75%>
           <tr VALIGN = TOP>
@@ -11,14 +12,33 @@
             <td><p>Starting Coord:</p></td>
             <td><p>Ending Coord:</p></td>
             <td>
+=======
+        <header>
+          <table WIDTH = 80%>
+            <tr VALIGN = TOP>
+              <td><p id = "emph">Pathfinding Website</p></td>
+              <td><p>Starting Coord:</p></td>
+              <td><p>Ending Coord:</p></td>
+              <td>
+>>>>>>> Stashed changes
               <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Change Pathfinder</button>
+                <button onclick="myFunction()" class="dropbtn" id = "findertype">Change Pathfinder</button>
                 <div id="myDropdown" class="dropdown-content">
+                  <a onclick="changeASTAR()">A*</a>
+                  <a onclick="changeDEPTH()">Depth First Breadth First Whatever</a>
+                  <!--
                   <a href="#ASTAR">A*</a>
                   <a href="#DEPTH">Depth First Breadth First Whatever</a>
+                  -->
                 </div>
               </div>
               <script>
+                function changeASTAR() {
+                  document.getElementById("findertype").innerHTML = "A-STAR";
+                }
+                function changeDEPTH() {
+                  document.getElementById("findertype").innerHTML = "DEPTHFIRST";
+                }
                 function myFunction() {
                   document.getElementById("myDropdown").classList.toggle("show");
                 }
