@@ -10,7 +10,9 @@
   border-radius: 5px;
   width: 120px;
   scale: 1.6;
-  height: 60%
+  height: 60%;
+  font-size: 12px;
+
 }
 
 .GridNode {
