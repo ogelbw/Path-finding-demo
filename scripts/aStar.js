@@ -1,3 +1,3 @@
-function aStar(start, goal, walls, gridx, gridy){
+function aStar(start, goal, cheapest, path){
     
 }
