@@ -100,33 +100,82 @@ header{
   left: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(25%);
-  border: 0;
   scale: 1.6;
   border-radius: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  color: white;
+  color: black;
+  border-style: solid;
+  background: none;
+  border-width: 4px;
 }
 
 .Goal.Button{
-  background-color: #8a2073;
+  /* background-color: #8a2073; */
+  border-color: #8a2073;
 }
 .Goal.Button:hover{
   background-color: #561449;
+  border-color: #561449;
+  background: #561449;
+  color: white;
+}
+
+.Goal.Button.Filled{
+  background-color: #8a2073;
+  border-color: #8a2073;
+  color: white;
 }
 
 .Start.Button{
-  background-color: #204e8a;
+  /* background-color: #204e8a; */
+  border-color: #204e8a;
 }
 .Start.Button:hover {
   background-color: #143156;
+  border-color: #143156;
+  color: white;
+}
+
+.Start.Button.Filled{
+  background-color: #204e8a;
+  border-color: #204e8a;
+  color: white;
 }
 
 .Wall.Button{
-  background-color: #3e3e3e;
+  /* background-color: #3e3e3e; */
+  border-color: #3e3e3e;
 }
 .Wall.Button:hover{
   background-color: #0a0a0a;
+  color: white;
+  border-color: #0a0a0a;
+}
+
+.Wall.Button.Filled{
+  background-color: #0a0a0a;
+  color: white;
+  border-color: #0a0a0a;
+}
+
+.Go.Button{
+  border-color: orangered;
+}
+
+.Go.Button:hover{
+  background-color: orangered;
+  color: white;
+}
+
+.Go.Button:hover{
+  background-color: orangered;
+  color: white;
+}
+
+.Go.Button.Filled{
+  background-color: orangered;
+  color: white;
 }
 
 #emph{

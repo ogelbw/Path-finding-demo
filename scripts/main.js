@@ -1,20 +1,37 @@
 let start = []
 let goal = []
 let actionState = ""
+let Startbtn = document.getElementsByClassName("Start Button")[0]
+let GoalBtn = document.getElementsByClassName("Goal Button")[0]
+let WallBtn = document.getElementsByClassName("Wall Button")[0]
+let GoBtn = document.getElementsByClassName("Go Button")[0]
+
 
 // setting up grid
 
 makeGrid(Math.floor(window.screen.width / 100) -2, Math.floor(window.screen.height / 100) - 2)
 
 function SetAction(action){
-    if (action == "PlaceWall" && actionState == "PlaceWall"){actionState = ""} else{
+
+    if (action == "PlaceWall" && actionState == "PlaceWall"){actionState = ""; WallBtn.className = "Wall Button"} else{
         actionState = action
+        WallBtn.className = "Filled Wall Button"
     }
+
+    if(action == "PlaceGoal") {GoalBtn.className = "Filled Goal Button"; Startbtn.className = "Start Button"; GoBtn.className = "Go Button"; WallBtn.className = "Wall Button"}
+    if(action == "PlaceStart") {GoalBtn.className = "Goal Button"; Startbtn.className = "Filled Start Button"; GoBtn.className = "Go Button"; WallBtn.className = "Wall Button"}
+    if(action == "Go") {GoalBtn.className = "Goal Button"; Startbtn.className = "Start Button"; GoBtn.className = "Filled Go Button"; WallBtn.className = "Wall Button"
+        StartPathing()
+}
+
+    
+
 }
 
 function NodeAction(x,y) {
     let node = getNode(x,y)
     switch (actionState) {
+
         case "PlaceStart":
             if(start.length != 0){
                 let tempNode = getNode(start[0], start[1])
@@ -24,6 +41,7 @@ function NodeAction(x,y) {
             start = [x,y]
             node.className = "Start GridNode"
             actionState = ""
+            Startbtn.className = "Start Button"
             break;
             
             case "PlaceGoal":
@@ -35,6 +53,7 @@ function NodeAction(x,y) {
             goal = [x,y]
             node.className = "Goal GridNode"
             actionState = ""
+            GoalBtn.className = "Goal Button"
             break;
 
         case "PlaceWall":
