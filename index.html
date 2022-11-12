@@ -8,8 +8,9 @@
         <table WIDTH = 75%>
           <tr VALIGN = TOP>
             <td><p>Pathfinding Website</p></td>
-            <td><p>Starting Coord:</p></td>
-            <td><p>Ending Coord:</p></td>
+            <td style="position: relative;" ><button class="Goal Button">Goal</button></td>
+            <td style="position: relative;" ><button class="Start Button">Start</button></td>
+            <td style="position: relative;" ><button class="Wall Button">Wall</button></td>
             <td>
               <div class="dropdown">
                 <button onclick="myFunction()" class="dropbtn">Change Pathfinder</button>
@@ -44,7 +45,7 @@
         </div>
 
         <script src="./scripts/grid.js"></script>
-        <script type="text/javascript">makeGrid(17,8)</script>
+        <script type="text/javascript">makeGrid(11,8)</script>
         <div>
           <p>team: the bean crew</p>
         </div>
