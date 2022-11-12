@@ -6,6 +6,7 @@ function makeGrid(x,y){
             let block = document.createElement('div')
             block.className = "GridNode"
             block.id = "node_" + column + "_" + rows
+            block.onclick = NodeAction(column, rows)
             row.appendChild(block)
         }
         grid = document.getElementById("grid")

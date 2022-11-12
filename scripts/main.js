@@ -1,9 +1,50 @@
 let start = []
 let goal = []
+let actionState = ""
 
 // setting up grid
 
 makeGrid(Math.floor(window.screen.width / 100) -2, Math.floor(window.screen.height / 100) - 2)
+
+function SetAction(action){
+    if (action == "PlaceWall" && actionState == "PlaceWall"){actionState = ""} else{
+        actionState = action
+    }
+}
+
+function NodeAction(x,y) {
+    let node = getNode(x,y)
+    switch (actionState) {
+        case "PlaceStart":
+            if(start != []){
+                let tempNode = getNode(start[0], start[1])
+                tempNode.className = "GridNode"
+            }
+            if([x,y] == goal) {goal = []}
+            start = [x,y]
+            node.className = "Start GridNode"
+            actionState = ""
+            break;
+            
+            case "PlaceGoal":
+                if (goal != []){
+                    let tempNode = getNode(goal[0], goal[1])
+                    tempNode.className = "GridNode"}
+                    if([x,y] == start) {start = []}
+            
+            goal = [x,y]
+            node.className = "Goal GridNode"
+            actionState = ""
+            break;
+
+        case "PlaceWall":
+            node.
+            break
+    
+        default:
+            break;
+    }
+}
 
 function StartPathing(){
     if (start.length != 2){return}

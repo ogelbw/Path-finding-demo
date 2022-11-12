@@ -9,5 +9,5 @@ function isGoal(){
 }
 
 function getNode(x,y){
-    return document.getElementById("node_"+y+"_"+x)
+    return document.getElementById("node_"+x+"_"+y)
 }
