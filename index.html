@@ -14,19 +14,36 @@
                 <button onclick="myFunction()" class="dropbtn" id = "findertype">Change Pathfinder</button>
                 <div id="myDropdown" class="dropdown-content">
                   <a onclick="changeASTAR()">A*</a>
-                  <a onclick="changeDEPTH()">Depth First Breadth First Whatever</a>
+                  <a onclick="changeDEPTH()">Depth First</a>
+                  <a onclick="changeJERMA()">Testing (J)</a>
                 </div>
               </div>
       </div>
       <script>
         function changeASTAR() {
           document.getElementById("findertype").innerHTML = "A-STAR";
+          document.body.style.background = '#f2f2f2';
+          document.getElementById("grid").style.background = '#cccccc';
         }
         function changeDEPTH() {
           document.getElementById("findertype").innerHTML = "DEPTHFIRST";
+          document.body.style.background = '#f2f2f2';
+          document.getElementById("grid").style.background = '#cccccc';
+
+        }
+        function changeJERMA() {
+          document.getElementById("findertype").innerHTML = "JERMA";
+          document.body.style.backgroundImage = "url('j.jpg')";
+          document.getElementById('grid').style.background = 'transparent';
+          document.getElementById('head').style.background = 'transparent';
+          var blocks = document.getElementsByClassName('GridNode')
+          for (var i = 0, len = blocks.length; i < len; ++i) {
+            document.blocks[i].style.opacity = 0.5;
+          }
         }
         function myFunction() {
           document.getElementById("myDropdown").classList.toggle("show");
+
         }
         window.onclick = function(event) {
           if (!event.target.matches('.dropbtn')) {
@@ -49,7 +66,7 @@
         <script src="./scripts/grid.js"></script>
         <script src="./scripts/main.js"></script>
         <div>
-          <p>team: the bean crew</p>
+          <p id="emph">team: the bean crew</p>
         </div>
       </body>
       </html>

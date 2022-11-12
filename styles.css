@@ -10,7 +10,9 @@
   border-radius: 5px;
   width: 100%;
   scale: 1.6;
-  height: 60%
+  height: 60%;
+  font-size: 12px;
+
 }
 
 .GridNode {
@@ -75,8 +77,9 @@
 
 header{
   background-color: #f2f2f2;
-  font-size: 16px;
-  font-family: sans-serif;
+  font-size: 14px;
+  font-family: serif;
+  height: 50px;
 }
 
 .main{
@@ -128,7 +131,6 @@ header{
 
 #emph{
   font-weight: bold;
-  padding-left: 20px;
 }
 
 .Wall.GridNode{
