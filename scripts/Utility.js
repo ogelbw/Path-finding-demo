@@ -1,0 +1,3 @@
+function getIsWall(x,y){
+    
+}
