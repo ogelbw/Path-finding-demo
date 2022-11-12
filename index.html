@@ -5,58 +5,49 @@
     </head>
     <body>
       <div style="position: relative; width: 100%; height: 40px; display: inline-flex; justify-content: space-around; padding-bottom: 10px;">
-        <button class="Goal Button">Goal</button>
         <button class="Start Button">Start</button>
+        <button class="Goal Button">Goal</button>
         <button class="Wall Button">Wall</button>
+        <button style="background-color: orangered;" class="Button">Go</button>
 
         <div class="dropdown">
                 <button onclick="myFunction()" class="dropbtn" id = "findertype">Change Pathfinder</button>
                 <div id="myDropdown" class="dropdown-content">
                   <a onclick="changeASTAR()">A*</a>
                   <a onclick="changeDEPTH()">Depth First Breadth First Whatever</a>
-                  <!--
-                  <a href="#ASTAR">A*</a>
-                  <a href="#DEPTH">Depth First Breadth First Whatever</a>
-                  -->
                 </div>
               </div>
-
       </div>
-
-              
-              <script>
-                function changeASTAR() {
-                  document.getElementById("findertype").innerHTML = "A-STAR";
-                }
-                function changeDEPTH() {
-                  document.getElementById("findertype").innerHTML = "DEPTHFIRST";
-                }
-                function myFunction() {
-                  document.getElementById("myDropdown").classList.toggle("show");
-                }
-                window.onclick = function(event) {
-                  if (!event.target.matches('.dropbtn')) {
-                    var dropdowns = document.getElementsByClassName("dropdown-content");
-                    var i;
-                    for (i = 0; i < dropdowns.length; i++) {
-                      var openDropdown = dropdowns[i];
-                      if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                      }
-                    }
-                  }
-                }
-                </script>
-              </td>
-            </tr>
-          </table>
-        </header>
+      <script>
+        function changeASTAR() {
+          document.getElementById("findertype").innerHTML = "A-STAR";
+        }
+        function changeDEPTH() {
+          document.getElementById("findertype").innerHTML = "DEPTHFIRST";
+        }
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+      </script>
 
         <div class="main" id="grid">
         </div>
 
+        <script src="./scripts/Utility.js"></script>
         <script src="./scripts/grid.js"></script>
-        <script type="text/javascript">makeGrid(16,8)</script>
+        <script src="./scripts/main.js"></script>
         <div>
           <p>team: the bean crew</p>
         </div>
