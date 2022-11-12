@@ -4,22 +4,31 @@
       <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-      <header>
-        <table WIDTH = 75%>
+      <header WIDTH = 100%>
+        <table WIDTH = 80%>
           <tr VALIGN = TOP>
-            <td><p>Pathfinding Website</p></td>
             <td style="position: relative;" ><button class="Goal Button">Goal</button></td>
             <td style="position: relative;" ><button class="Start Button">Start</button></td>
             <td style="position: relative;" ><button class="Wall Button">Wall</button></td>
             <td>
               <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Change Pathfinder</button>
+                <button onclick="myFunction()" class="dropbtn" id = "findertype">Change Pathfinder</button>
                 <div id="myDropdown" class="dropdown-content">
+                  <a onclick="changeASTAR()">A*</a>
+                  <a onclick="changeDEPTH()">Depth First Breadth First Whatever</a>
+                  <!--
                   <a href="#ASTAR">A*</a>
                   <a href="#DEPTH">Depth First Breadth First Whatever</a>
+                  -->
                 </div>
               </div>
               <script>
+                function changeASTAR() {
+                  document.getElementById("findertype").innerHTML = "A-STAR";
+                }
+                function changeDEPTH() {
+                  document.getElementById("findertype").innerHTML = "DEPTHFIRST";
+                }
                 function myFunction() {
                   document.getElementById("myDropdown").classList.toggle("show");
                 }
@@ -51,4 +60,3 @@
         </div>
       </body>
       </html>
-      

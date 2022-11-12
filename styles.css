@@ -64,6 +64,7 @@
 header{
   background-color: #f2f2f2;
   font-size: 16px;
+  font-family: sans-serif;
 }
 
 .main{
@@ -91,3 +92,7 @@ header{
   background-color: #34db66;
 }
 
+#emph{
+  font-weight: bold;
+  padding-left: 20px;
+}
