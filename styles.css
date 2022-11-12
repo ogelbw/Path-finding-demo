@@ -132,3 +132,15 @@ header{
 #emph{
   font-weight: bold;
 }
+
+.Wall.GridNode{
+  background-color: #3e3e3e;
+}
+
+.Start.GridNode{
+  background-color: #204e8a;
+}
+
+.Goal.GridNode{
+  background-color: #34db66;
+}

@@ -1,6 +1,6 @@
 function IsWall(x,y){
     let thing = getNode(x,y)
-    return thing.getAttribute("data") == "wall"
+    return thing.className == "Wall GridNode"
 }
 
 function isGoal(){
@@ -9,5 +9,5 @@ function isGoal(){
 }
 
 function getNode(x,y){
-    return document.getElementById("node_"+y+"_"+x)
+    return document.getElementById("node_"+x+"_"+y)
 }
