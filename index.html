@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+          <table WIDTH = 75%>
+            <tr VALIGN = TOP>
+              <td><p>Pathfinding Website</p></td>
+              <td><p>Starting Coord:</p></td>
+              <td><p>Ending Coord:</p></td>
+              <td>
+              <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Change Pathfinder</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#ASTAR">A*</a>
+                  <a href="#DEPTH">Depth First Breadth First Whatever</a>
+                </div>
+              </div>
+              <script>
+                function myFunction() {
+                  document.getElementById("myDropdown").classList.toggle("show");
+                }
+                window.onclick = function(event) {
+                if (!event.target.matches('.dropbtn')) {
+                  var dropdowns = document.getElementsByClassName("dropdown-content");
+                  var i;
+                  for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                      openDropdown.classList.remove('show');
+                    }
+                  }
+                }
+              }
+              </script>
+              </td>
+            </tr>
+          </table>
+        </header>
+        <div class="main">
+          <p>test</p>
+        </div>
+        <div>
+          <p>team: the bean crew</p>
+        </div>
+    </body>
+</html>
