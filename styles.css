@@ -81,7 +81,7 @@ header{
   background-color: #cccccc;
   border-radius: 5px;
   height: 100%;
-  position: relative;
+  /* position: relative; */
   padding-bottom: 10px;
 }
 
