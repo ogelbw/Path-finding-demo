@@ -112,17 +112,17 @@ header{
 }
 
 .Start.Button{
-  background-color: #34db66;
+  background-color: #204e8a;
 }
 .Start.Button:hover {
-  background-color: #29b94f;
+  background-color: #143156;
 }
 
 .Wall.Button{
-  background-color: #34db66;
+  background-color: #3e3e3e;
 }
 .Wall.Button:hover{
-  background-color: #29b94f;
+  background-color: #0a0a0a;
 }
 
 #emph{
