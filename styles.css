@@ -7,6 +7,30 @@
   cursor: pointer;
 }
 
+.GridNode {
+  background-color: #999999;
+  border-radius: 10px;
+  min-width: 100px;
+  min-height: 20px;
+  margin: 5px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+.Row{
+  margin:auto;
+  width: fit-content;
+  white-space: nowrap;
+  padding-top: 5px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  /* display: inline-block; */
+  justify-content: space-between;
+}
+
 .dropbtn:hover, .dropbtn:focus {
   background-color: #29b94f;
 }
@@ -43,6 +67,9 @@ header{
 }
 
 .main{
-  background-color: #2f2f2f;
-  height: 440px;
+  background-color: #cccccc;
+  border-radius: 5px;
+  height: 100%;
+  position: relative;
+  padding-bottom: 10px;
 }

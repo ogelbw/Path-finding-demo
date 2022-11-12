@@ -4,13 +4,13 @@
       <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <header>
-          <table WIDTH = 75%>
-            <tr VALIGN = TOP>
-              <td><p>Pathfinding Website</p></td>
-              <td><p>Starting Coord:</p></td>
-              <td><p>Ending Coord:</p></td>
-              <td>
+      <header>
+        <table WIDTH = 75%>
+          <tr VALIGN = TOP>
+            <td><p>Pathfinding Website</p></td>
+            <td><p>Starting Coord:</p></td>
+            <td><p>Ending Coord:</p></td>
+            <td>
               <div class="dropdown">
                 <button onclick="myFunction()" class="dropbtn">Change Pathfinder</button>
                 <div id="myDropdown" class="dropdown-content">
@@ -23,27 +23,31 @@
                   document.getElementById("myDropdown").classList.toggle("show");
                 }
                 window.onclick = function(event) {
-                if (!event.target.matches('.dropbtn')) {
-                  var dropdowns = document.getElementsByClassName("dropdown-content");
-                  var i;
-                  for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                      openDropdown.classList.remove('show');
+                  if (!event.target.matches('.dropbtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                      var openDropdown = dropdowns[i];
+                      if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                      }
                     }
                   }
                 }
-              }
-              </script>
+                </script>
               </td>
             </tr>
           </table>
         </header>
-        <div class="main">
-          <p>test</p>
+
+        <div class="main" id="grid">
         </div>
+
+        <script src="./scripts/grid.js"></script>
+        <script type="text/javascript">makeGrid(17,8)</script>
         <div>
           <p>team: the bean crew</p>
         </div>
-    </body>
-</html>
+      </body>
+      </html>
+      
