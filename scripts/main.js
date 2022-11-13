@@ -80,6 +80,15 @@ function StartPathing(){
     if (start.length != 2){return}
     if (goal.length != 2) {return}
 
+    // clean up
+    let elementsToClean = [...document.querySelectorAll(".Path.GridNode")]
+    let e2 = [...document.querySelectorAll(".Searching.GridNode")]
+    elementsToClean = elementsToClean.concat( e2)
+    for (let i = 0; i < elementsToClean.length; i++){
+        elementsToClean[i].className = "GridNode"
+    }
+
+
     switch (document.getElementById("findertype").innerHTML) {
         case "A-STAR":
             window.requestAnimationFrame(function () { aStar([ [[start[0],start[1]], 0, []] ])})
