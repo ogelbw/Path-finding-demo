@@ -1,17 +1,23 @@
 let start = []
 let goal = []
 let actionState = ""
+
 let Startbtn = document.getElementsByClassName("Start Button")[0]
 let GoalBtn = document.getElementsByClassName("Goal Button")[0]
 let WallBtn = document.getElementsByClassName("Wall Button")[0]
 let GoBtn = document.getElementsByClassName("Go Button")[0]
 
+var current_coord, neighbour_coord, leaf
+var pathingMap = new Map()
+var visitStack = [];
+var visitedSet;
 
 // setting up grid
 var gridWidth = Math.floor(window.screen.width / 100) -2
 var gridHeight = Math.floor(window.screen.height / 100) - 2
 
 makeGrid(gridWidth, gridHeight)
+changeASTAR()
 
 function SetAction(action){
 
@@ -79,9 +85,14 @@ function StartPathing(){
             window.requestAnimationFrame(function () { aStar([ [[start[0],start[1]], 0, []] ])})
             break;
     
-        case "DEPTHFIRST":
-            depthFirst(start,goal,gridWidth,gridHeight)
+        case "BREADTHFIRST":
+            window.requestAnimationFrame(function() {BreadthFirst()})
             break;
+            
+        case "DEPTHFIRST":
+            window.requestAnimationFrame(function() {DepthFirst()})
+            break;
+
         default:
             break;
     } document.getElementById("findertype").innerHTML

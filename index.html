@@ -14,8 +14,9 @@
                 <button onclick="myFunction()" class="dropbtn" id = "findertype">Change Pathfinder</button>
                 <div id="myDropdown" class="dropdown-content">
                   <a onclick="changeASTAR()">A*</a>
+                  <a onclick="changeBREADTH()">Breadth First</a>
                   <a onclick="changeDEPTH()">Depth First</a>
-                  <a onclick="changeJERMA()">Testing (J)</a>
+                  <!-- <a onclick="changeJERMA()">Testing (J)</a> -->
                 </div>
               </div>
       </div>
@@ -25,11 +26,15 @@
           document.body.style.background = '#f2f2f2';
           document.getElementById("grid").style.background = '#cccccc';
         }
+        function changeBREADTH() {
+          document.getElementById("findertype").innerHTML = "BREADTHFIRST";
+          document.body.style.background = '#f2f2f2';
+          document.getElementById("grid").style.background = '#cccccc';
+        }
         function changeDEPTH() {
           document.getElementById("findertype").innerHTML = "DEPTHFIRST";
           document.body.style.background = '#f2f2f2';
           document.getElementById("grid").style.background = '#cccccc';
-
         }
         function changeJERMA() {
           document.getElementById("findertype").innerHTML = "JERMA";
@@ -65,7 +70,8 @@
         <script src="./scripts/Utility.js"></script>
         <script src="./scripts/grid.js"></script>
         <script src="./scripts/aStar.js"></script>
-        <script src="./scripts/main.js"></script>
+        <script src="./scripts/breadthFirst.js"></script>
         <script src="./scripts/depthFirst.js"></script>
+        <script src="./scripts/main.js"></script>
       </body>
       </html>

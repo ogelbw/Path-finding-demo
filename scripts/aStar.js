@@ -2,7 +2,6 @@ function aStar(queueToSee){
     if (queueToSee.length == 0) {
         return "Fail";
     }
-    // console.log("ran")
     node = queueToSee.shift()
     htmlNode = getNode(node[0][0], node[0][1])
     if (htmlNode.className == "Goal GridNode") {
@@ -10,14 +9,12 @@ function aStar(queueToSee){
         return;
     }
 
-    if(htmlNode.className != "Start GridNode" && htmlNode.className !=  "Goal GrideNode"){ htmlNode.className = "Searching GridNode" }
+    if(htmlNode.className != "Start GridNode" && htmlNode.className !=  "Goal GridNode"){ htmlNode.className = "Searching GridNode" }
 
     children = generateSuccessors(node, node[2])
-    // console.log(children)
     queueToSee =  queueToSee.concat(children)
     queueToSee.sort(function(a,b) {return a[1] - b[1]})
     queueToSee = removeDupe(queueToSee)
-    // console.log(queueToSee)
 
     window.requestAnimationFrame (function () {setTimeout( () => {aStar(queueToSee)}, 100)})
 }
@@ -40,8 +37,6 @@ function removeDupe(arr){
             fullyU.push(element)
         }
     });
-    // console.log(unique)
-    // console.log(fullyU)
     return fullyU;
 }
 
@@ -54,16 +49,13 @@ function generateSuccessors(node, PathTaken){
     ]
 
     let validList = []
-
     for (let i = 0 ; i< list.length; i++){
         if (getNode(list[i][0],list[i][1]) != null){
             if (getNode(list[i][0],list[i][1]).className != "Wall GridNode" && getNode(list[i][0],list[i][1]).className != "Searching GridNode" && getNode(list[i][0],list[i][1]).className != "Start GridNode"){
-                // console.log(PathTaken)
                 validList.push([list[i], GetCost(node[0], list[i]), PathTaken.concat([[list[i][0], list[i][1]]])])
             }
         }
     }
-
     return validList
 }
 
