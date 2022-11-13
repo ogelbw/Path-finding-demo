@@ -2,7 +2,7 @@ function aStar(queueToSee){
     if (queueToSee.length == 0) {
         return "Fail";
     }
-    console.log("ran")
+    // console.log("ran")
     node = queueToSee.shift()
     htmlNode = getNode(node[0][0], node[0][1])
     if (htmlNode.className == "Goal GridNode") {
@@ -10,24 +10,42 @@ function aStar(queueToSee){
         return;
     }
 
-    htmlNode.className = "Searching GridNode"
+    if(htmlNode.className != "Start GridNode" && htmlNode.className !=  "Goal GrideNode"){ htmlNode.className = "Searching GridNode" }
 
-    children = generateSuccessors(node, node[1], node[2])
-    for (let i = 0; i< children.length; i++){
-        queueToSee.push(children[i])
-    }
+    children = generateSuccessors(node, node[2])
+    // console.log(children)
+    queueToSee =  queueToSee.concat(children)
     queueToSee.sort(function(a,b) {return a[1] - b[1]})
+    queueToSee = removeDupe(queueToSee)
+    // console.log(queueToSee)
 
-    aStar(queueToSee)
+    window.requestAnimationFrame (function () {setTimeout( () => {aStar(queueToSee)}, 100)})
 }
 
 function DrawPath(path){
     for(let i = 0; i < path.length; i++){
-        getNode(path[i][0], path[i][1]).className = "Path GridNode"
+        let n = getNode(path[i][0], path[i][1])
+        if (n.className == "Start GridNode") { continue }
+        if (n.className == "Goal GridNode") { continue }
+        n.className = "Path GridNode"
     }
 }
 
-function generateSuccessors(node, currentCost, PathTaken){
+function removeDupe(arr){
+    var unique = [];
+    var fullyU= []
+    arr.forEach(element => {
+        if (!unique.includes(element[0].toString() )) {
+            unique.push(element[0].toString());
+            fullyU.push(element)
+        }
+    });
+    // console.log(unique)
+    // console.log(fullyU)
+    return fullyU;
+}
+
+function generateSuccessors(node, PathTaken){
     let list = [
         [node[0][0],     node[0][1] + 1],
         [node[0][0] + 1, node[0][1]],
@@ -39,8 +57,9 @@ function generateSuccessors(node, currentCost, PathTaken){
 
     for (let i = 0 ; i< list.length; i++){
         if (getNode(list[i][0],list[i][1]) != null){
-            if (getNode(list[i][0],list[i][1]).className != "Wall GridNode" && getNode(list[i][0],list[i][1]).className != "Searching GridNode"){
-                validList.push([list[i], currentCost + GetCost(node, list[i]), PathTaken.concat([[list[i][0], list[i][1]]])])
+            if (getNode(list[i][0],list[i][1]).className != "Wall GridNode" && getNode(list[i][0],list[i][1]).className != "Searching GridNode" && getNode(list[i][0],list[i][1]).className != "Start GridNode"){
+                // console.log(PathTaken)
+                validList.push([list[i], GetCost(node[0], list[i]), PathTaken.concat([[list[i][0], list[i][1]]])])
             }
         }
     }
@@ -54,8 +73,9 @@ function sortList(list){
 }
 
 function GetCost(from, to){
-    let q = [Math.abs(to[0] - from[0]), Math.abs(to[1] - from[1])]
-    // let h = Math.abs(to[0] - goal[0]) + Math.abs(to[1] - goal[1]) //Strange goal cost
-
-    return Math.sqrt(Math.pow(q[0], 2), Math.pow(q[1], 2)) //+ h
+    // let q = Math.abs(to[0] - from[0])+ Math.abs(to[1] - from[1])
+    let stepsGoal = Math.abs( to[0] - goal[0]) + Math.abs(to[1] - goal[1]) //Strange goal cost
+    let DistToGoal = Math.sqrt( Math.pow(goal[0] - to[0], 2) + Math.pow(goal[1] - to[1], 2) )
+    // console.log(stepsGoal, goal, to)
+    return stepsGoal + DistToGoal
 }
