@@ -74,7 +74,7 @@ function StartPathing(){
 
     switch (document.getElementById("findertype").innerHTML) {
         case "A-STAR":
-            window.requestAnimationFrame(aStar(start, goal, 9999999, []))
+            aStar([ [[start[0],start[1]], 0, []] ])
             break;
     
         case "DEPTHFIRST":
