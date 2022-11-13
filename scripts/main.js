@@ -8,8 +8,10 @@ let GoBtn = document.getElementsByClassName("Go Button")[0]
 
 
 // setting up grid
+var gridWidth = Math.floor(window.screen.width / 100) -2
+var gridHeight = Math.floor(window.screen.height / 100) - 2
 
-makeGrid(Math.floor(window.screen.width / 100) -2, Math.floor(window.screen.height / 100) - 2)
+makeGrid(gridWidth, gridHeight)
 
 function SetAction(action){
 
@@ -78,7 +80,7 @@ function StartPathing(){
             break;
     
         case "DEPTHFIRST":
-            // put thing here
+            depthFirst(start,goal,gridWidth,gridHeight)
             break;
         default:
             break;
